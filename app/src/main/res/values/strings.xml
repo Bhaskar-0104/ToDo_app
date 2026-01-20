@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">ToDoApp</string>
+
+    <string name="tasks">Tasks</string>
+    <string name="calendar">Calendar</string>
+    <string name="settings">Settings</string>
+    <string name="no_tasks_yet">No Tasks Yet!</string>
+    <string name="no_task_sub_text">Your day is clear. Start by adding a new task to stay organized.</string>
+</resources>
