@@ -35,21 +35,16 @@ jobs:
 
       - name: Install Trivy
         run: |
-          sudo apt-get update
-          sudo apt-get install -y wget gnupg
+          sudo apt-get install wget gnupg
           wget -qO - https://aquasecurity.github.io/trivy-repo/deb/public.key | gpg --dearmor | sudo tee /usr/share/keyrings/trivy.gpg > /dev/null
-          echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee /etc/apt/sources.list.d/trivy.list
+          echo "deb [signed-by=/usr/share/keyrings/trivy.gpg] https://aquasecurity.github.io/trivy-repo/deb generic main" | sudo tee -a /etc/apt/sources.list.d/trivy.list
           sudo apt-get update
-          sudo apt-get install -y trivy
+          sudo apt-get install trivy
 
       - name: Trivy FS Scan
         run: trivy fs --format table -o fs-report.txt .
 
       - name: Install Gitleaks
-        run: |
-          wget https://github.com/gitleaks/gitleaks/releases/latest/download/gitleaks-linux-amd64.tar.gz
-          tar -xvf gitleaks-linux-amd64.tar.gz
-          sudo mv gitleaks /usr/local/bin/
-
+        run: sudo apt-get install gitleaks -y
       - name: Gitleaks Code Scan
         run: gitleaks detect --source . --report-format json --report-path gitleaks-report.json
