@@ -86,16 +86,16 @@ fun HomeScreen() {
                         fontSize = 24.sp
                     )
                 },
-                navigationIcon = {
-                    IconButton(onClick = {}) {
-                        Icon(Icons.Default.Menu, "Menu", tint = TextPrimary)
-                    }
-                },
-                actions = {
-                    IconButton(onClick = {}) {
-                        Icon(Icons.Default.MoreVert, "More", tint = TextPrimary)
-                    }
-                },
+//                navigationIcon = {
+//                    IconButton(onClick = {}) {
+//                        Icon(Icons.Default.Menu, "Menu", tint = TextPrimary)
+//                    }
+//                },
+//                actions = {
+//                    IconButton(onClick = {}) {
+//                        Icon(Icons.Default.MoreVert, "More", tint = TextPrimary)
+//                    }
+//                },
                 colors = TopAppBarDefaults.topAppBarColors(containerColor = AppBackground)
             )
         },
